@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
     // console.log({esto:this})
 
   }
+
+
   ngAfterViewInit(): void {
     // console.log({esto1:this})
 
@@ -56,6 +58,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       this.googleBtn.nativeElement,
       { theme: "outline", size: "large" }  // customization attributes
     );
+
   }
   handleCredentialResponse(response: any) {
     console.log("Encoded JWT ID token: " + response.credential);
