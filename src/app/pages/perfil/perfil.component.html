@@ -2,28 +2,28 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Mi perfil de usuario</h4>
-        <h6 class="card-subtitle">Ajustes</h6>
+        <h4 class="card-title">Ajustes de la cuenta</h4>
+        <h6 class="card-subtitle"></h6>
 
-        <form class="form p-t-20"
-        [formGroup]="perfilForm"
-        (submit)="actualizarPerfil()">
-
+        <form
+          class="form p-t-20"
+          [formGroup]="perfilForm"
+          (submit)="actualizarPerfil()"
+        >
           <div class="form-group">
-            <label for="exampleInputuname">User Name</label>
+            <label for="exampleInputuname">Nombre de usuario</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="ti-user"></i></div>
               <input
                 type="text"
                 class="form-control"
                 id="exampleInputuname"
-                placeholder="Nombre de usuario"
-                formControlName="nombre"
-              />
+                placeholder="Nombre del usuario"
+                formControlName="nombre"/>
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label for="exampleInputEmail1">Dirección de correo electrónico</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="ti-email"></i></div>
               <input
@@ -37,10 +37,9 @@
             </div>
           </div>
 
-          <button
-            type="submit"
-            class="btn btn-success waves-effect waves-light m-r-10"
-            [disabled]="perfilForm.invalid">
+          <button   type="submit"
+                    class="btn btn-success waves-effect waves-light m-r-10"
+                    [disabled]="perfilForm.invalid" >
             <i class="fa fa-save"></i>
             Guardar cambios
           </button>
@@ -56,26 +55,189 @@
         <h6 class="card-subtitle">Imagen del usuario</h6>
 
         <div class="text-center">
-          <img *ngIf="!imgTemp" [src]="usuario.imagenUrl" class="img-avatar">
-          <img *ngIf="imgTemp" [src]="imgTemp" class="img-avatar">
-      </div>
+          <img *ngIf="!imgTemp" [src]="usuario.imagenUrl" class="img-avatar" />
+          <img *ngIf="imgTemp" [src]="imgTemp" class="img-avatar" />
+        </div>
 
-        <input type="file"
-        (change)="cambiarImagen($any($event.target).files[0])"
+        <input
+          type="file"
+          (change)="cambiarImagen($any($event.target).files[0])"
         />
 
-        <br>
-        <br>
+        <br />
+        <br />
 
-        <button
-          type="button"
-          class="btn btn-success waves-effect waves-light m-r-10"
-          [disabled]="!imagenSubir"
+        <button   type="button"
+        style="background-color: #06D79c;"
+                  class="btn btn-success waves-effect waves-light m-r-10"
+                  [disabled]="!imagenSubir"
           (click)="subirImagen()">
           <i class="fa fa-save"></i>
-Cambiar imagen
-</button>
+          Cambiar imagen
+        </button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- la otra informacion del usuario -->
+<div class="col-lg-12">
+  <div class="card">
+
+    <div class="card-body">
+      <form action="#">
+        <div class="form-body">
+          <h4 class="card-title">Ajustes del perfil</h4>
+          <hr />
+          <div class="row p-t-20">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Apellido 1</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  class="form-control"
+                  placeholder="Apellido 1"
+                />
+
+              </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Apellido 2</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  class="form-control "
+                  placeholder="Apellido 2"
+                />
+
+              </div>
+            </div>
+            <!--/span-->
+          </div>
+          <!--/row-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Género</label>
+                <select class="form-control custom-select">
+                  <option value="">Masculino</option>
+                  <option value="">Femenino</option>
+                </select>
+                <small class="form-control-feedback">
+                  Selecciona tu género
+                </small>
+              </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Fecha de nacimiento</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  placeholder="dd/mm/yyyy"/>
+              </div>
+            </div>
+            <!--/span-->
+          </div>
+          <!--/row-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Código postal</label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Profesión</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  class="form-control"
+                  placeholder="Profesión"
+                />
+
+              </div>
+            </div>
+            <!--/span-->
+
+          </div>
+          <!--/row-->
+          <h3 class="box-title m-t-40">Perfil del competidor</h3>
+          <hr />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Peso que deseas conseguir</label>
+                <input type="text"
+                      class="form-control"
+                      placeholder="Kg" />
+              </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Altura</label>
+                <input type="text"
+                        class="form-control"
+                        placeholder="Cm" />
+              </div>
+            </div>
+            <!--/span-->
+          </div>
+          <!--/row-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Código postal</label>
+                <input type="text"
+                        class="form-control" />
+              </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>País</label>
+                <select class="form-control custom-select">
+                  <option>--Selecciona tu pais--</option>
+                  <option>India</option>
+                  <option>Sri Lanka</option>
+                  <option>USA</option>
+                </select>
+              </div>
+            </div>
+            <!--/span-->
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Frases célebre</label>
+                <input type="text" class="form-control" placeholder="40 carácteres"/>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="form-actions">
+          <button
+            type="submit"
+            class="btn btn-success waves-effect waves-light m-r-10"
+
+          >
+            <i class="fa fa-save"></i>
+            Guardar cambios
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+

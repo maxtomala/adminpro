@@ -1,0 +1,199 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body text-center">
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <img
+              src="http://localhost/wp-content/uploads/2023/11/6-1024x1024.jpg"
+              alt="Scale Image"
+              class="img-fluid"
+              style="width: 100%; max-width: 150px; height: auto"
+            />
+          </div>
+
+          <div class="col-md-9">
+            <div class="form-group">
+              <label for="weeklyWeight" style="text-align: left"
+                >Introduce tu peso semanal</label
+              >
+
+              <input
+                type="text"
+                class="form-control w-100"
+                id="weeklyWeight"
+                placeholder="KG"
+              />
+              <br />
+              <button class="btn btn-primary w-100" style="line-height: 20px">
+                Enviar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6 d-flex flex-column flex-direction-row">
+    <div class="card">
+      <div
+        class="card-body d-flex flex-row justify-content-center align-items-center"
+      >
+        <div class="image-container">
+          <img
+            src="http://localhost/wp-content/uploads/2023/10/Imagen6.jpg"
+            class="img-fluid"
+            style="
+              width: 100%;
+              max-width: 150px;
+              height: auto;
+              border-radius: 50%;
+            "
+            alt="Imagen de perfil"
+          />
+        </div>
+        <div class="text-container" style="width: 50%; justify-content: center">
+          <h5 class="text-center mt-4">Peso actual:</h5>
+          <p class="text-center">77 kg</p>
+          <h5 class="text-center mt-4">Objetivo:</h5>
+          <p class="text-center">64 kg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 order-lg-1 d-flex flex-column flex-direction-row">
+    <div class="card">
+      <div
+        class="card-body d-flex flex-row justify-content-center align-items-center"
+      >
+        <div class="text-container" style="width: 50%; justify-content: center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="70"
+            fill="currentColor"
+            class="bi bi-percent"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0M4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"
+            />
+          </svg>
+          <p class="percentage-text">
+            restante <br />
+            para alcanzar <br />el objetivo
+          </p>
+        </div>
+        <div class="image-container d-flex justify-content-center">
+          <img
+            src="http://localhost/wp-content/uploads/2023/10/Imagen6.jpg"
+            class="img-fluid"
+            style="
+              width: 100%;
+              max-width: 150px;
+              height: auto;
+              border-radius: 50%;
+            "
+            alt="Imagen de perfil"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card" style="width: 100vw">
+          <div class="card-body">
+            <h2>CAMBIOS FÍSICOS FRONTAL</h2>
+            <!-- probando abajo -->
+
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fresultados.as.com%2Fresultados%2Fficha%2Fequipo%2Fbarcelona%2F3%2F&psig=AOvVaw2FZtqLBxcU63gdxVCPjquh&ust=1702746343921000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCND1gcr2kYMDFQAAAAAdAAAAABAD" alt="">
+
+
+
+            <!-- probando arriba -->
+            <!-- probando arriba -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body text-center">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div>
+            <h2>CAMBIOS FÍSICOS FRONTAL</h2>
+            <!-- probando abajo -->
+            <!-- probando abajo -->
+            <div class="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <!-- Imagen a la izquierda -->
+                  <img *ngIf="!imgTemp" [src]="usuario.imagenUrl" class="img-avatar" />
+                  <img *ngIf="imgTemp" [src]="imgTemp" class="img-avatar" />
+
+                  <!-- Imagen principal -->
+                  <img *ngIf="!imgTemp" [src]="usuario.imagenUrl" class="img-avatar" />
+                  <img *ngIf="imgTemp" [src]="imgTemp" class="img-avatar" />
+
+                  <!-- Imagen a la derecha -->
+                  <img *ngIf="!imgTemp" [src]="usuario.imagenUrl" class="img-avatar" />
+                  <img *ngIf="imgTemp" [src]="imgTemp" class="img-avatar" />
+                </div>
+              </div>
+            </div>
+
+            <!-- src\app\auth\login\IMAGEN_NO_DISPONIBLE.jpg -->
+              <a
+                class="carousel-control-prev"
+                href="#carouselExampleControls"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Anterior</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carouselExampleControls"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Siguiente</span>
+              </a>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="btn-subir-imagen">
+              Subir imagendsd
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="btn-eliminar-imagen"
+            >
+              Eliminar imagen
+            </button>
+
+            <!-- probando arriba -->
+            <!-- probando arriba -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
