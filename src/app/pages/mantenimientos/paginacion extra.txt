@@ -1,0 +1,49 @@
+video 202
+
+Aporte: Paginación e Indice con ngx-pagination, y role en select con *ngFor
+2 votos
+Ricardo · Clase 202 · hace 3 años
+Les traigo este aporte que, debido a muchas cosas que andan desactualizadas en el curso(aunque el curso sea muy bueno) me ha llevado casi un día lograr hacerlo, la paginación y el indice general de la paginación(del lado del frontend), al igual que mostrar el role que trae cada usuario en el Select, ya que de la forma que esta en el vídeo simplemente no funciona ya, en mi caso utilizando angular 9.
+
+Arreglando los Roles
+
+En el archivo usuarios.components.ts Se define este arreglo:
+
+roles: string[] = ['USER', 'MEDICO', 'ADMIN'];
+
+
+En el archivo usuarios.components.html Se define así:
+
+<select [(ngModel)]='usuario.role' name='role' class='form-control'>
+<option *ngFor="let role of roles">{‌{role}}</option>
+</select>
+Agregando la paginación con ngx-pagination
+
+Primero instalar la nueva librería npm i ngx-pagination --save
+
+
+
+En el archivo usuarios.components.ts Se definen estas variables:
+
+  itemsPorPagina: number = 5;
+  paginaActual: number = 1;
+En el archivo usuarios.components.html Se define así:
+
+
+
+ <!-- Al inicio del tbody -->
+<tbody>
+  <tr *ngFor="let usuario of usuarios | paginate: { itemsPerPage: itemsPorPagina, currentPage: paginaActual };let i = index">
+     <td>
+     {‌{ itemsPorPagina * (paginaActual - 1) + i + 1 }}
+     </td>
+
+ <!-- Despues de la tabla -->
+
+</table>
+<pagination-controls (pageChange)="paginaActual = $event" previousLabel="Anterior" nextLabel="Siguiente" >
+</pagination-controls>
+PDT: Segun la documentacion de esta libreria, para que algun filtro les sirva en todas las paginas, deben poner el filtro de la siguiente manera
+
+  <tr *ngFor="let item of collection | filter: queryString | paginate: config">CORRECT</tr>
+Espero que les sirva y les ahorre algo de tiempo.

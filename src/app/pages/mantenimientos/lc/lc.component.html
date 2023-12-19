@@ -1,0 +1,269 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body text-center">
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <img
+              src="http://localhost/wp-content/uploads/2023/11/6-1024x1024.jpg"
+              alt="Scale Image"
+              class="img-fluid"
+              style="width: 100%; max-width: 150px; height: auto"
+            />
+          </div>
+
+          <div class="col-md-9">
+            <div class="form-group">
+              <label for="weeklyWeight" style="text-align: left"
+                >Introduce tu peso semanal</label
+              >
+
+              <input
+                type="text"
+                class="form-control w-100"
+                id="weeklyWeight"
+                placeholder="KG"
+              />
+              <br />
+              <button class="btn btn-primary w-100" style="line-height: 20px">
+                Enviar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 2º fila div1 -->
+<div class="row">
+  <div class="col-6 d-flex flex-column flex-direction-row">
+    <div class="card">
+      <div
+        class="card-body d-flex flex-row justify-content-center align-items-center"
+      >
+        <div class="image-container">
+          <img
+            src="http://localhost/wp-content/uploads/2023/10/Imagen6.jpg"
+            class="img-fluid"
+            style="
+              width: 100%;
+              max-width: 150px;
+              height: auto;
+              border-radius: 50%;
+            "
+            alt="Imagen de perfil"
+          />
+        </div>
+        <div class="text-container" style="width: 50%; justify-content: center">
+          <h5 class="text-center mt-4">Peso actual:</h5>
+          <p class="text-center">77 kg</p>
+          <h5 class="text-center mt-4">Objetivo:</h5>
+          <p class="text-center">64 kg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 2º fila div2 -->
+  <div class="col-6 order-lg-1 d-flex flex-column flex-direction-row">
+    <div class="card">
+      <div
+        class="card-body d-flex flex-row justify-content-center align-items-center"
+      >
+        <div class="text-container" style="width: 50%; justify-content: center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="70"
+            fill="currentColor"
+            class="bi bi-percent"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0M4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"
+            />
+          </svg>
+          <p class="percentage-text">
+            restante <br />
+            para alcanzar <br />el objetivo
+          </p>
+          <div id="container"></div>
+
+        </div>
+
+
+        <div class="card-title">Mi Gráfico Circular</div>
+        <div class="card-body">
+          <canvas #myPieChart > </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <h4 class="card-title">Angle offset 22</h4> -->
+<!-- 3º fila div1 -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body text-center">
+        <h2>Evolución de tu peso</h2>
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="card-body">
+              <!-- Aquí va el código de la gráfica -->
+              <!-- Aquí va el código de la gráfica -->
+              <h4 class="card-title">
+                <strong>Gráfica lineal:</strong>peso en el tiempo <b>&nbsp;</b>
+                <i
+                  class="fas fa-info-circle"
+                  title="Si estás siguiendo una dieta o un programa de ejercicio:
+
+                Esta gráfica te ayudará a seguir tu progreso y ver cómo tus esfuerzos están dando resultados.
+
+                Si ves que tu peso está subiendo, es posible que necesites ajustar tu dieta o programa de ejercicio."
+                ></i>
+              </h4>
+
+              <div id="morris-line-chart" style="height: 300px"></div>
+              <!-- Aquí  arriba va el código de la gráfica -->
+              <!-- Aquí  arriba va el código de la gráfica -->
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <div class="card-body text-center">
+              <div class="botongraficapersonal">
+                <button
+                  style="width: 100%; margin-bottom: 10px"
+                  (click)="('semanal')"
+                >
+                  Semanal
+                </button>
+                <button
+                  style="width: 100%; margin-bottom: 10px"
+                  (click)="('mensual')"
+                >
+                  Mensual
+                </button>
+                <button
+                  style="width: 100%; margin-bottom: 10px"
+                  (click)="('anual')"
+                >
+                  Anual
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4º fila div1 -->
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body text-center">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div>
+              <div>
+                <h2>CAMBIOS FÍSICOS FRONTAL</h2>
+                <div class="col-md-12">
+                  <div class="row subtitles">
+                    <div class="col-md-2 text-end">
+                      <div class="subtitle-top-left">Antes</div>
+                    </div>
+                    <div class="col-md-8 text-center">
+                      <div class="subtitle-top-center"></div>
+                    </div>
+                    <div class="col-md-2 text-start">
+                      <div class="subtitle-top-right">Después</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container mt-4">
+                  <div class="row">
+                    <!-- Columna para la flecha anterior -->
+                    <div class="col-2 text-end align-self-center">
+                      <div
+                        class="swiper-button-prev"
+                        style="color: #000; font-size: 24px"
+                      >
+                        ⬅️
+                      </div>
+                    </div>
+                    <!-- Columna para el carrusel de imágenes -->
+                    <div class="col-8">
+                      <div
+                        style="display: flex; justify-content: space-between"
+                      >
+                        <!-- Imágenes dinámicas -->
+                        <div
+                          *ngFor="let image of images"
+                          class="image-frame"
+                          style="width: 200px; height: auto"
+                        >
+                          <img
+                            [src]="
+                              imgTemp
+                                ? imgTemp
+                                : 'assets/image_no_disponible.jpg'
+                            "
+                            alt="Imagen"
+                            style="width: 100%; height: 100%"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Columna para la flecha posterior -->
+                    <div class="col-2 text-start align-self-center">
+                      <div
+                        class="swiper-button-next"
+                        style="color: #000; font-size: 24px"
+                      >
+                        ➡️
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Botones rectangulares sin números para cambiar la imagen del carrusel -->
+                  <div class="row mt-2">
+                    <div class="col-12">
+                      <div class="d-flex justify-content-center">
+                        <button
+                          *ngFor="let image of images; let i = index"
+                          class="btn btn-secondary mx-2"
+                          (click)="cambiarImagen(i)"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <br />
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="btn-subir-imagen"
+                >
+                  Subir imagen
+                </button>
+                &nbsp;
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  id="btn-eliminar-imagen"
+                >
+                  Eliminar imagen
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

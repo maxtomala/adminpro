@@ -15,3 +15,98 @@
     justify-content: center;
     text-align: center;
 }
+.img-avatar {
+  height: 200px;
+  width: 200px;
+}
+
+.w100 {
+  width: 100px;
+}
+
+.w140 {
+  width: 140px;
+}
+
+.avatar {
+  border-radius: 100%;
+  width: 30px;
+}
+.oculto {
+  display: none;
+}
+
+.fondo-modal-imagen {
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* probando carrusel */
+/* probando carrusel */
+/* probando carrusel */
+/* probando carrusel */
+
+.carousel {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.carousel-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item {
+  width: 400px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #000;
+}
+
+.carousel-control-prev .carousel-control-prev-icon,
+.carousel-control-next .carousel-control-next-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.position-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.active-position-circle {
+  background-color: #0056b3;
+}

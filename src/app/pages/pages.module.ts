@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //modulos
 import { SharedModule } from '../shared/shared.module';
@@ -16,6 +16,9 @@ import { DonaComponent } from '../components/dona/dona.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { LcComponent } from './mantenimientos/lc/lc.component';
 
 
 
@@ -28,8 +31,11 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
+    PerfilComponent,
+    UsuariosComponent,
+    LcComponent,
   ],
-  exports:[  
+  exports:[
     DashboardComponent,
     ProgressComponent,
     Grafica1Component,
@@ -40,11 +46,12 @@ import { RxjsComponent } from './rxjs/rxjs.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     RouterModule,
     ComponentsModule,
 
-    
+
   ]
 })
 export class PagesModule { }
