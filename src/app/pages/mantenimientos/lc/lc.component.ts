@@ -15,6 +15,7 @@ import Chart from 'chart.js/auto';
 
 
 
+
 declare var Morris: any;
 
 // Registra los módulos necesarios de Chart.js
@@ -57,6 +58,7 @@ export class LcComponent implements OnInit, AfterViewInit {
   value: any;
   pesoActual: number;
   private pieChart: Chart;
+porcentajeProgreso: any;
 
 
   constructor(
@@ -155,9 +157,7 @@ export class LcComponent implements OnInit, AfterViewInit {
 
 
 
-
   mostrarGrafico2(): void {
-
     // Establecer valores fijos
     console.log("entro a grafica mostrar grafica 2");
     const pesoActual: number = 70;
@@ -166,7 +166,6 @@ export class LcComponent implements OnInit, AfterViewInit {
     // Calcular el porcentaje del progreso hacia el objetivo
     let porcentajeProgreso: number = (pesoActual / pesoIdeal) * 100;
     console.log("porcentajeProgreso");
-
     console.log(porcentajeProgreso);
 
     // Datos para el gráfico
@@ -174,7 +173,9 @@ export class LcComponent implements OnInit, AfterViewInit {
       labels: ['Progreso', 'Restante'],
       datasets: [{
         data: [porcentajeProgreso, 100 - porcentajeProgreso],
-        backgroundColor: ['#36A2EB', '#FFCE56'],
+        backgroundColor: ['#745af2', '#67757c'], // Colores especificados
+        hoverBackgroundColor: ['#745af2', '#67757c'],
+        borderWidth: 1, // Grosor de 1 para el área del donut
       }],
     };
 
@@ -182,21 +183,49 @@ export class LcComponent implements OnInit, AfterViewInit {
     const options = {
       responsive: true,
       maintainAspectRatio: false,
+      cutoutPercentage: 85, // Ajusta este valor según sea necesario para el tamaño del agujero del donut
+      legend: {
+        display: false, // No mostrar leyenda
+      },
+      tooltips: {
+        enabled: false, // Desactivar información sobre herramientas para ocultar los porcentajes
+      },
+      elements: {
+        arc: {
+          borderWidth: 1, // Grosor de 1 para los arcos
+        },
+      },
+      // Agregar un texto personalizado encima del donut
+      onRender: (chart) => {
+        const ctx = chart.ctx;
+        const width = chart.width;
+        const height = chart.height;
+
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#000'; // Color negro para el texto
+        ctx.font = 'bold 20px Arial'; // Tamaño y fuente del texto
+
+        const text = `${porcentajeProgreso.toFixed(1)}%`;
+        const textX = width / 2;
+        const textY = height / 2;
+
+        ctx.fillText(text, textX, textY);
+      },
     };
 
     // Obtén el contexto del lienzo (canvas)
     const ctx: CanvasRenderingContext2D = this.pieChartCanvas.nativeElement.getContext('2d');
     ctx.clearRect(0, 0, this.pieChartCanvas.nativeElement.width, this.pieChartCanvas.nativeElement.height);
-    this.pieChartCanvas.nativeElement.width = "400";  // Reemplaza "nuevoAncho" con el valor deseado
-    this.pieChartCanvas.nativeElement.height = "400";
-    // Crea el gráfico circular
+    this.pieChartCanvas.nativeElement.width = "200";  // Reemplaza "nuevoAncho" con el valor deseado
+    this.pieChartCanvas.nativeElement.height = "200";
+
+    // Crea el gráfico de donut
     new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: data,
       options: options,
     });
-
-
   }
 
   // Método para inicializar y mostrar el gráfico

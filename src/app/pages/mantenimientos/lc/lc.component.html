@@ -37,10 +37,11 @@
 </div>
 <!-- 2º fila div1 -->
 <div class="row">
-  <div class="col-6 d-flex flex-column flex-direction-row">
+  <div class="col-6">
     <div class="card">
       <div
         class="card-body d-flex flex-row justify-content-center align-items-center"
+        style="height: 200px"
       >
         <div class="image-container">
           <img
@@ -49,13 +50,14 @@
             style="
               width: 100%;
               max-width: 150px;
-              height: auto;
+              height: 100%;
               border-radius: 50%;
+              object-fit: cover;
             "
             alt="Imagen de perfil"
           />
         </div>
-        <div class="text-container" style="width: 50%; justify-content: center">
+        <div class="text-container ml-3">
           <h5 class="text-center mt-4">Peso actual:</h5>
           <p class="text-center">77 kg</p>
           <h5 class="text-center mt-4">Objetivo:</h5>
@@ -64,13 +66,15 @@
       </div>
     </div>
   </div>
+
   <!-- 2º fila div2 -->
-  <div class="col-6 order-lg-1 d-flex flex-column flex-direction-row">
+  <div class="col-6">
     <div class="card">
       <div
         class="card-body d-flex flex-row justify-content-center align-items-center"
+        style="height: 200px"
       >
-        <div class="text-container" style="width: 50%; justify-content: center">
+        <div class="text-container ml-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="50"
@@ -88,13 +92,10 @@
             para alcanzar <br />el objetivo
           </p>
           <div id="container"></div>
-
         </div>
 
-
-        <div class="card-title">Mi Gráfico Circular</div>
-        <div class="card-body">
-          <canvas #myPieChart > </canvas>
+        <div class="canvas-container ml-3">
+          <canvas #myPieChart style="width: 200px; height: 200px"></canvas>
         </div>
       </div>
     </div>
