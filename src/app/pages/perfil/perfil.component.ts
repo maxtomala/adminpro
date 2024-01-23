@@ -55,7 +55,6 @@ export class PerfilComponent implements OnInit {
       }, (err) => {
         Swal.fire('Error', err.error.msg, 'error');
       });
-
   }
 
   cambiarImagen(file: File ){

@@ -15,6 +15,9 @@ import { PerfilComponent } from './perfil/perfil.component';
 //Mantenimientos
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 import { LcComponent } from './mantenimientos/lc/lc.component';
+import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
+import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { MedicoComponent } from './mantenimientos/medicos/medico.component';
 
 const routes: Routes = [
 
@@ -22,6 +25,7 @@ const routes: Routes = [
     path: 'dashboard',
     component: PagesComponent,
     canActivate: [ AuthGuard ],
+    //panel
     children: [
       { path: '', component: DashboardComponent, data:{titulo:'Dashboard'} },
       { path: 'progress', component: ProgressComponent,data:{titulo:'progressBar'}},
@@ -32,8 +36,13 @@ const routes: Routes = [
       { path: 'perfil', component: PerfilComponent,data:{titulo:'Perfil de usuario'} },
 
       //mantenimietos
-      { path: 'usuarios', component: UsuariosComponent,data:{titulo:'Usuario de aplicación'} },
-      { path: 'lc', component: LcComponent,data:{titulo:'lc'} },
+      { path: 'usuarios', component: UsuariosComponent,data:{titulo:'Mantenimietno de Usuarios'} },
+      { path: 'lc', component: LcComponent,data:{titulo:' Mantenimietno de lc'} },
+      { path: 'hospitales', component: HospitalesComponent,data:{titulo:'Mantenimietno de hospital'} },
+      { path: 'medicos', component: MedicosComponent,data:{titulo:' Mantenimietno de Medico'} },
+      { path: 'medico/:id', component: MedicoComponent,data:{titulo:' Mantenimietno de Medico'} },
+
+
 
 
 

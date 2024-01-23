@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { PagesModule } from './pages/pages.module';
 import { NgModule } from '@angular/core';
 //modulos
 import { AppRoutingModule } from './app-routing.module';
-import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 
 import { AppComponent } from './app.component';
