@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../services/sidebar.service';
 declare function customInitFunctions():void;
 
 
@@ -8,16 +9,16 @@ declare function customInitFunctions():void;
   styles: []
 })
 export class PagesComponent implements OnInit{
-  constructor() { }
+  constructor(
+    private sidebarService: SidebarService ) { }
 
   ngOnInit(): void {
     // importante no borrar es la funcion  para cargar la pag
     customInitFunctions();
-    
+this.sidebarService.cargarMenu();
   }
-  
-}
 
+}
 
 // Accede al elemento con ID "theme" después de que el DOM se haya cargado
 const linkTheme = document.querySelector('#theme') as HTMLLinkElement;
@@ -25,7 +26,7 @@ const linkTheme = document.querySelector('#theme') as HTMLLinkElement;
 if (linkTheme) {
   // Recupera la configuración del tema desde el localStorage
   const storedTheme = localStorage.getItem('theme');
-  
+
   // Si hay una configuración de tema almacenada, úsala, de lo contrario, usa un valor predeterminado
   const url = storedTheme || './assets/css/colors/purple-dark.css';
   linkTheme.setAttribute('href', url);

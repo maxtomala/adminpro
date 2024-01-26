@@ -18,6 +18,8 @@ import { LcComponent } from './mantenimientos/lc/lc.component';
 import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
 import { MedicoComponent } from './mantenimientos/medicos/medico.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { AdminGuard } from '../guards/admin.guard';
 
 const routes: Routes = [
 
@@ -31,6 +33,7 @@ const routes: Routes = [
       { path: 'progress', component: ProgressComponent,data:{titulo:'progressBar'}},
       { path: 'grafica1', component: Grafica1Component,data:{titulo:'Grafica #1'}},
       { path: 'account-settings', component: AccountSettingsComponent,data:{titulo:'Ajustes de cuenta'}},
+      { path: 'buscar/:termino', component: BusquedaComponent, data: { titulo: 'Busquedas' }},
       { path: 'promesas', component: PromesasComponent,data:{titulo:'promesas'} },
       { path: 'rxjs', component: RxjsComponent,data:{titulo:'Rxjs'} },
       { path: 'perfil', component: PerfilComponent,data:{titulo:'Perfil de usuario'} },
@@ -43,7 +46,8 @@ const routes: Routes = [
       { path: 'medico/:id', component: MedicoComponent,data:{titulo:' Mantenimietno de Medico'} },
 
 
-
+            // Rutas de Admin
+            { path: 'usuarios', canActivate: [ AdminGuard ], component: UsuariosComponent, data: { titulo: 'Matenimiento de Usuarios' }},
 
 
     ]
